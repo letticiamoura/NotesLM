@@ -15,7 +15,7 @@ interface NewNoteCardProps {
 
 export function NewNoteCard( {onNoteCreated}: NewNoteCardProps ) {
 
-  let speechRecognition: SpeechRecognition | null = null;
+  let speechRecognition: SpeechRecognition | null = null
 
   const [shouldShowOnBoarding, setShouldShowOnBoarding] = useState(true);
 
@@ -105,7 +105,7 @@ export function NewNoteCard( {onNoteCreated}: NewNoteCardProps ) {
 
         <Dialog.Trigger className="rounded-md flex flex-col bg-slate-700 text-left p-5 gap-3 hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400 outline-none">
 
-          <span className="text-sm font-medium text-slate-200">
+          <span className="text-xl font-medium text-lime-500">
             Adicionar Nota
           </span>
 
@@ -164,7 +164,7 @@ export function NewNoteCard( {onNoteCreated}: NewNoteCardProps ) {
               <Button
                 type="button"
                 onClick={handleSaveNote}
-                className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium hover:bg-lime-600"
+                className="w-56 m-auto rounded-3xl mb-10 bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium hover:bg-lime-600"
               >
                 Salvar nota
               </Button>)}
@@ -177,6 +177,6 @@ export function NewNoteCard( {onNoteCreated}: NewNoteCardProps ) {
         
       </Dialog.Root>
         
-    );
+    )
 
-};
+}

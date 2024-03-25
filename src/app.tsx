@@ -3,6 +3,8 @@ import { ChangeEvent, useState } from "react";
 import { NewNoteCard } from "./components/new-note-card";
 import { NoteCard } from "./components/note-card";
 
+import logo from "./assets/favicon.png"
+
 interface Note {
   id: string,
   date: Date,
@@ -57,13 +59,19 @@ export function App() {
   }
 
   //Filtrando as notas
-  const filteredNotes = search !== '' ? notes.filter(note => note.content.toLocaleLowerCase().includes(search)) : notes;
+  const filteredNotes = search !== '' ? notes.filter(note => note.content.toLocaleLowerCase().includes(search)) : notes
 
   return (
 
     <div className="mx-auto max-w-6xl my-12 space-y-6 px-5">
 
-      <h1 className="text-slate-500 font-helvetica">Notes | LM</h1>
+      <div className="flex justify-start gap-5">
+
+      <img src={logo} alt="logo" className="opacity-50 hover:opacity-100" />
+
+      <h1 className="text-slate-500 font-helvetica text-2xl pt-5">Notes | LM</h1>
+
+      </div>
 
       <form className="w-full">
 
@@ -84,12 +92,12 @@ export function App() {
           
           {filteredNotes.map(note =>{
             return <NoteCard key={note.id} note={note} onNoteDeleted={onNoteDeleted} />
-          })};
+          })}
 
         </div>
 
       </div>
 
-    );
+    )
   
-};
+}
